@@ -1,0 +1,737 @@
+{
+	"info": {
+		"_postman_id": "49f7d835-a0a5-4218-9251-62bc99c5d229",
+		"name": "Product Code Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39083207"
+	},
+	"item": [
+		{
+			"name": "Admin - Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"admin1\",\n  \"password\": \"adminpass\",\n  \"role\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Admin - Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"admin1\",\n  \"password\": \"adminpass\",\n  \"role\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-nMoFx54+czTntmSLXl3mqIsZV4A\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Jul 2025 20:03:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User registered successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin - Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"admin1\",\n  \"password\": \"adminpass\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Admin - Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"admin1\",\n  \"password\": \"adminpass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "218"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"da-Np2NRk81xDiSvAjiiyXEJKkqD4U\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Jul 2025 20:06:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmMyODFlNzc2MDU0NmNhMGViOTI2ZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTkxODc3MSwiZXhwIjoxNzUyMDA1MTcxfQ.1esvtVJ71GIVkoj-3g7SOiGBs-Nq5VtZsKGnDKTCups\",\n    \"role\": \"admin\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin - Add Product (Form Data)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <admin_token>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Paracetamol",
+							"type": "text"
+						},
+						{
+							"key": "batchSize",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "mrp",
+							"value": "360",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "",
+							"type": "file"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/admin/add-product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"admin",
+						"add-product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Admin - Add Product (Form Data)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmMyODFlNzc2MDU0NmNhMGViOTI2ZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTkxODc3MSwiZXhwIjoxNzUyMDA1MTcxfQ.1esvtVJ71GIVkoj-3g7SOiGBs-Nq5VtZsKGnDKTCups",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Paracetamol",
+									"type": "text"
+								},
+								{
+									"key": "batchSize",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "mrp",
+									"value": "360",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/harsh/Downloads/clientsimg.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/admin/add-product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"admin",
+								"add-product"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "159"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9f-QxyJYDqgocb4XmY4778xBh3VVvA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Jul 2025 20:09:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Product added\",\n    \"product\": {\n        \"name\": \"Paracetamol\",\n        \"batchSize\": 5,\n        \"mrp\": 360,\n        \"image\": \"1751918991146-image.jpg\",\n        \"_id\": \"686c298f7760546ca0eb9274\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin - Generate Unique Codes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <admin_token>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"productId\": \"<paste_product_id_here>\",\n  \"batchNumber\": \"BATCH-001\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/admin/generate-codes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"admin",
+						"generate-codes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Admin - Generate Unique Codes",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmMyODFlNzc2MDU0NmNhMGViOTI2ZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTkxODc3MSwiZXhwIjoxNzUyMDA1MTcxfQ.1esvtVJ71GIVkoj-3g7SOiGBs-Nq5VtZsKGnDKTCups",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productId\": \"686c298f7760546ca0eb9274\",\n  \"batchNumber\": \"BATCH-001\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/admin/generate-codes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"admin",
+								"generate-codes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "816"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"330-UMZxd1Uw0VFz0sYeP5sJbLW2TbU\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Jul 2025 20:12:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unique codes generated\",\n    \"codes\": [\n        {\n            \"productId\": \"686c298f7760546ca0eb9274\",\n            \"batchNumber\": \"BATCH-001\",\n            \"code\": \"292b432d-8f2a-4267-a087-08f11ef7ff56\",\n            \"_id\": \"686c2a2b7760546ca0eb9279\",\n            \"__v\": 0\n        },\n        {\n            \"productId\": \"686c298f7760546ca0eb9274\",\n            \"batchNumber\": \"BATCH-001\",\n            \"code\": \"ffb4967f-0466-479e-aafd-e498f3232231\",\n            \"_id\": \"686c2a2b7760546ca0eb927b\",\n            \"__v\": 0\n        },\n        {\n            \"productId\": \"686c298f7760546ca0eb9274\",\n            \"batchNumber\": \"BATCH-001\",\n            \"code\": \"2dc9f5ea-5c97-4c76-ad89-9cc5af757886\",\n            \"_id\": \"686c2a2b7760546ca0eb927d\",\n            \"__v\": 0\n        },\n        {\n            \"productId\": \"686c298f7760546ca0eb9274\",\n            \"batchNumber\": \"BATCH-001\",\n            \"code\": \"e07a94da-0487-4445-af19-4f0476212203\",\n            \"_id\": \"686c2a2b7760546ca0eb927f\",\n            \"__v\": 0\n        },\n        {\n            \"productId\": \"686c298f7760546ca0eb9274\",\n            \"batchNumber\": \"BATCH-001\",\n            \"code\": \"9098d7a8-99f3-4499-88c8-7349b92ba46f\",\n            \"_id\": \"686c2a2b7760546ca0eb9281\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "User - Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"user1\",\n  \"password\": \"userpass\",\n  \"role\": \"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User - Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"user1\",\n  \"password\": \"userpass\",\n  \"role\": \"user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-nMoFx54+czTntmSLXl3mqIsZV4A\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Jul 2025 20:12:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User registered successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User - Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"user1\",\n  \"password\": \"userpass\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User - Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"user1\",\n  \"password\": \"userpass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "215"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d7-gUCKpAzMOIE0GyxRTKUkksDr0Rg\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Jul 2025 20:12:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmMyYTNlNzc2MDU0NmNhMGViOTI4NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzUxOTE5MTc5LCJleHAiOjE3NTIwMDU1Nzl9.xP18jo8zfy1Kx_h80sClTM5Dh-r3iWsTOkTPGGeEjOI\",\n    \"role\": \"user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User - Search Product by Code",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <user_token>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/user/search-by-code?code=<paste_code_here>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"search-by-code"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "<paste_code_here>"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User - Search Product by Code",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmMyYTNlNzc2MDU0NmNhMGViOTI4NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzUxOTE5MTc5LCJleHAiOjE3NTIwMDU1Nzl9.xP18jo8zfy1Kx_h80sClTM5Dh-r3iWsTOkTPGGeEjOI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/user/search-by-code?code=9098d7a8-99f3-4499-88c8-7349b92ba46f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"search-by-code"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "9098d7a8-99f3-4499-88c8-7349b92ba46f"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "188"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bc-if+J7m/t+A4vsj+QrHzTsSPEnMw\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Jul 2025 20:14:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productImage\": \"http://localhost:5000/uploads/1751918991146-image.jpg\",\n    \"batchNumber\": \"BATCH-001\",\n    \"uniqueCode\": \"9098d7a8-99f3-4499-88c8-7349b92ba46f\",\n    \"productName\": \"Paracetamol\",\n    \"mrp\": 360\n}"
+				}
+			]
+		}
+	]
+}
