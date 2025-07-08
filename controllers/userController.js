@@ -1,6 +1,6 @@
 const Code = require('../models/Code');
 const Product = require('../models/Product');
-
+// Search for a product by its unique code
 exports.searchByCode = async (req, res) => {
     const { code } = req.query;
 

@@ -3,7 +3,7 @@ const Code = require('../models/Code');
 const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 const fs = require('fs');
-
+// Middleware to handle file uploads
 exports.addProduct = async (req, res) => {
     try {
         const { name, batchSize, mrp } = req.body;
@@ -24,7 +24,7 @@ exports.addProduct = async (req, res) => {
         res.status(500).json({ message: 'Error adding product', error: err.message });
     }
 };
-
+// Middleware to handle the code generation
 exports.generateCodes = async (req, res) => {
     try {
         const { productId, batchNumber } = req.body;
